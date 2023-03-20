@@ -23,18 +23,15 @@ function SignUp() {
     }
     const handleConfirmPass=(event)=>{
         setConfirmPassword(event.target.value); //save confirmation 
-        setErrorMessage("");
+        setErrorMessage(""); // despair message after retrying 
     }
-    const handleSubmit=(event)=>{
+
+    const handleSubmit=(event)=>{ 
         event.preventDefault() //to deosn't relaod page when the else checked
 
-        if(password===confirmPassword){
-            console.log('succes')
-        }
-        else{
+        if(password!==confirmPassword)
             setErrorMessage("Passwords don't match");
-
-        }
+        
     }
 
 
@@ -49,10 +46,10 @@ function SignUp() {
             <div className='form' >
 
                 <div id='user'><span><FontAwesomeIcon icon={faUser} /> </span>
-                    <input className='inpu' type="text" placeholder='First-name' id="username" /></div>
+                    <input className='inpu' type="text" placeholder='Prenom' id="username" /></div>
 
                 <div id='user'><span><FontAwesomeIcon icon={faUser} /> </span>
-                    <input className='inpu' type="text" placeholder='Last-name' id="username" /></div>
+                    <input className='inpu' type="text" placeholder='Nom' id="username" /></div>
 
                 <div id='user'><span><FontAwesomeIcon icon={faEnvelope} /> </span>
                     <input className='inpu' type="text" placeholder='E-mail' id="username" /></div>
@@ -61,8 +58,8 @@ function SignUp() {
                 <div ><span><FontAwesomeIcon icon={faTransgenderAlt} /> </span>
                     <select className='inpu' id="gender" name="gender" value={gender} onChange={handleChange}>
                         <option value="">gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                        <option value="male">Homme</option>
+                        <option value="female">Femme</option>
                     </select>
 
 
@@ -73,7 +70,7 @@ function SignUp() {
 
 
                     <div id='pass' ><span id='key'><FontAwesomeIcon icon={faKey} /> </span>
-                        <input className='inpu' passwordIsValid type="password"
+                        <input className='inpu'  type="password"
                             placeholder='Mot de pass' id="password" onChange={handlePassword} />
                     </div>
 
@@ -85,9 +82,9 @@ function SignUp() {
                     </div>
 
 
-                    <button id='submit' type='submit' > Sign Up </button>
+                    <button id='submit' type='submit' > S'inscrie </button>
                     <div id='account'>
-                        <p>Already have an account ?  <a href='AuthentificationP'> Log in </a></p>
+                        <p> Already have an account ?  <a href='AuthentificationP'> Log in </a></p>
                     </div>
 
                 </div>
